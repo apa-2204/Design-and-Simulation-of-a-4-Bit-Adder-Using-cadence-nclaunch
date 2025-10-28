@@ -70,17 +70,19 @@ module tb_adder_4bit;
     wire Cout;
 
     // Instantiate the 4-bit adder
-    adder_4bit UUT (A,B,Cin,Sum,Cout);
-        
+    adder_4bit UUT (
+        .A(A), .B(B), .Cin(Cin),
+        .Sum(Sum), .Cout(Cout)
+    );
 
     initial begin
                
         // Test cases
-        A = 4'b0000; B = 4'b0000; Cin = 0; #10;
-        A = 4'b0011; B = 4'b0101; Cin = 0; #10;
-        A = 4'b1111; B = 4'b0001; Cin = 0; #10;
-        A = 4'b1010; B = 4'b0101; Cin = 1; #10;
-        A = 4'b1111; B = 4'b1111; Cin = 1; #10;
+        A = 4'b1010; B = 4'b1110; Cin = 0; #10;
+        A = 4'b0101; B = 4'b0110; Cin = 0; #10;
+        A = 4'b1101; B = 4'b1101; Cin = 0; #10;
+        A = 4'b0010; B = 4'b0111; Cin = 1; #10;
+        A = 4'b1111; B = 4'b0000; Cin = 1; #10;
 
         $finish;
     end
@@ -97,11 +99,11 @@ endmodule
 
 ### Nclaunch Work Library Window
 
-![Screenshot 2025-05-21 155538](https://github.com/user-attachments/assets/187ebe28-40e2-44b2-9b78-d08bdc67d62c)
+<img width="1919" height="1079" alt="Screenshot 2025-10-28 141742" src="https://github.com/user-attachments/assets/5ec05101-73c2-4a34-8404-02c509e37b2f" />
+
 
 ### Simulation Waveforms
-![Screenshot 2025-05-21 155512](https://github.com/user-attachments/assets/4d1457be-ef30-4b8b-a58d-aa8ac39c078c)
-
+<img width="1907" height="1078" alt="image" src="https://github.com/user-attachments/assets/deda6fc1-daa1-4931-bf54-57a12b5bb1f7" />
 
 
 ## Results
